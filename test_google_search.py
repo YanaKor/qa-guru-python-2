@@ -17,9 +17,9 @@ def test_google_search(maximize_browser_window):
 
 def test_no_results(maximize_browser_window):
     browser.open('https://google.com')
-    random_string = 'glfnbhfgnhoklbmftgyphjpofmkbnmgkbmkghnkdmbdmgkhmfjodkro[tgkrdkjhibjmpoxdbhpiniet'
-    browser.element('[name="q"]').should(be.blank).type(random_string).press_enter()
-    browser.element('[id="topstuff"]').should(have.text(f'По запросу {random_string} ничего не найдено.'))
+    request = 'glfnbhfgnhoklbmftgyphjpofmkbnmgkbmkghnkdmbdmgkhmfjodkro[tgkrdkjhibjmpoxdbhpiniet'
+    browser.element('[name="q"]').should(be.blank).type(request).press_enter()
+    browser.element('[id="topstuff"]').should(have.text(f'По запросу {request} ничего не найдено.'))
 
 
 
